@@ -1,0 +1,11 @@
+// _index.scss in base
+// Variables, Resets, Typography
+
+$primary-color: #42b883;
+$secondary-color: #35495e;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: $secondary-color;
+}

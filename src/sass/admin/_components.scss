@@ -1,0 +1,78 @@
+// _components.scss - Admin component styles
+
+// Stats Card
+.stats-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .meta {
+        h3 {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin: 0 0 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+    }
+    
+    .icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #ecfdf5;
+        color: #059669;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+    }
+}
+
+// Data Table
+.admin-table-container {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        
+        thead {
+            background-color: #f8fafc;
+            th {
+                text-align: left;
+                padding: 1rem 1.5rem;
+                font-size: 0.75rem;
+                font-weight: 600;
+                color: #64748b;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+        }
+        
+        tbody {
+            tr {
+                border-top: 1px solid #e2e8f0;
+                &:hover {
+                    background-color: #f8fafc;
+                }
+                td {
+                    padding: 1rem 1.5rem;
+                    color: #334155;
+                }
+            }
+        }
+    }
+}
