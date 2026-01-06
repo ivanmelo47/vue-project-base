@@ -1,25 +1,66 @@
 <template>
-  <aside class="admin-sidebar">
+  <aside class="admin-sidebar" :class="{ 'collapsed': collapsed }">
     <div class="logo-area">
-        <span>AdminPanel</span>
+        <i class="bi bi-shield-lock-fill logo-icon"></i>
+        <span class="logo-text" v-if="!collapsed">AdminPanel</span>
     </div>
     <nav>
       <ul>
-        <li class="section-title">Admin</li>
-        <li><RouterLink to="/admin">Dashboard</RouterLink></li>
-        <li><RouterLink to="/admin/users">Users</RouterLink></li>
-        <li><RouterLink to="/admin/reports">Reports</RouterLink></li>
+        <li class="section-title" v-if="!collapsed">Admin</li>
+        <li>
+            <RouterLink to="/admin" title="Dashboard" active-class="ignore-active" exact-active-class="router-link-active">
+                <i class="bi bi-speedometer2"></i>
+                <span v-if="!collapsed">Dashboard</span>
+            </RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/admin/users" title="Users">
+                <i class="bi bi-people"></i>
+                <span v-if="!collapsed">Users</span>
+            </RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/admin/reports" title="Reports">
+                <i class="bi bi-file-earmark-bar-graph"></i>
+                <span v-if="!collapsed">Reports</span>
+            </RouterLink>
+        </li>
 
-        <li class="section-title">Master</li>
-        <li><RouterLink to="/master/settings">Settings</RouterLink></li>
-        <li><RouterLink to="/master/audit">Audit Logs</RouterLink></li>
+        <li class="section-title" v-if="!collapsed">Master</li>
+        <li>
+            <RouterLink to="/master/settings" title="Settings">
+                <i class="bi bi-gear"></i>
+                <span v-if="!collapsed">Settings</span>
+            </RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/master/audit" title="Audit Logs">
+                <i class="bi bi-journal-text"></i>
+                <span v-if="!collapsed">Audit Logs</span>
+            </RouterLink>
+        </li>
 
-        <li class="section-title">User</li>
-        <li><RouterLink to="/user/profile">My Profile</RouterLink></li>
-        <li><RouterLink to="/user/tasks">My Tasks</RouterLink></li>
+        <li class="section-title" v-if="!collapsed">User</li>
+        <li>
+            <RouterLink to="/user/profile" title="My Profile">
+                <i class="bi bi-person-circle"></i>
+                <span v-if="!collapsed">My Profile</span>
+            </RouterLink>
+        </li>
+        <li>
+            <RouterLink to="/user/tasks" title="My Tasks">
+                <i class="bi bi-list-check"></i>
+                <span v-if="!collapsed">My Tasks</span>
+            </RouterLink>
+        </li>
 
         <li class="separator"></li>
-        <li><RouterLink to="/">Back to Home</RouterLink></li>
+        <li>
+            <RouterLink to="/" title="Back to Home">
+                <i class="bi bi-box-arrow-left"></i>
+                <span v-if="!collapsed">Back to Home</span>
+            </RouterLink>
+        </li>
       </ul>
     </nav>
   </aside>
@@ -27,19 +68,12 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+
+defineProps<{
+    collapsed: boolean
+}>()
 </script>
 
 <style scoped>
-.section-title {
-    padding: 1rem 1.5rem 0.5rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: #64748b;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-}
-.separator {
-    margin: 1rem 0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
+/* Styles handled in admin.scss */
 </style>

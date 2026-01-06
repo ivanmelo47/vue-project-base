@@ -1,9 +1,16 @@
 <template>
-  <div class="admin-layout">
-    <AdminSidebar />
+  <div class="admin-layout" :class="{ 'is-collapsed': isSidebarCollapsed }">
+    <div v-if="isMobileOpen" class="sidebar-overlay" @click="isMobileOpen = false"></div>
+    <AdminSidebar 
+        :collapsed="isSidebarCollapsed" 
+        :class="{ 'mobile-open': isMobileOpen }"
+    />
     
     <div class="admin-content-area">
-      <AdminHeader :title="$route.name?.toString() || 'Dashboard'" />
+      <AdminHeader 
+        :title="($route.meta.title as string) || $route.name?.toString() || 'Dashboard'" 
+        @toggle-sidebar="toggleSidebar"
+      />
       
       <main class="admin-main">
         <RouterView />
@@ -13,12 +20,30 @@
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { ref, watch } from 'vue'
+import { RouterView, useRoute } from 'vue-router'
 import AdminSidebar from '@/views/private/admin/components/AdminSidebar.vue'
 import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
 
 // Import Admin Styles
 import '@/sass/admin.scss'
+
+const route = useRoute()
+const isSidebarCollapsed = ref(false)
+const isMobileOpen = ref(false)
+
+const toggleSidebar = () => {
+    if (window.innerWidth < 768) {
+        isMobileOpen.value = !isMobileOpen.value
+    } else {
+        isSidebarCollapsed.value = !isSidebarCollapsed.value
+    }
+}
+
+// Close mobile sidebar on route change
+watch(route, () => {
+    isMobileOpen.value = false
+})
 </script>
 
 <style scoped lang="scss">

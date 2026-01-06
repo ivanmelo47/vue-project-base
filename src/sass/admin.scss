@@ -1,10 +1,16 @@
-@use 'base/index' as base;
-// @use 'components/index' as components;
-// @use 'layout/index' as layout;
-@use 'utils/index' as utils;
-@use 'admin/index' as admin;
+@use 'sass:color';
 
-// Admin specific overrides or global admin styles
-body {
-    background-color: #f4f6f9; // Example admin background
-}
+
+
+// 1. Core & Variables
+// 1. Core & Variables
+@use 'admin/variables';
+
+// 2. Base Components
+@use 'admin/layout';
+@use 'admin/header';
+@use 'admin/sidebar';
+@use 'admin/dropdown';
+
+// 3. Other Components
+@use 'admin/components';

@@ -1,6 +1,5 @@
 <template>
   <div class="master-audit">
-    <AdminHeader title="Audit Logs" />
     <div class="content-wrapper">
         <div class="log-entry" v-for="i in 5" :key="i">
             <span class="timestamp">2023-10-27 10:{{ 30 + i }} AM</span>
@@ -11,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
+// No specific imports
 </script>
 
 <style scoped>

@@ -1,6 +1,5 @@
 <template>
   <div class="user-profile">
-    <AdminHeader title="My Profile" />
     <div class="content-wrapper">
         <div class="profile-card">
             <div class="avatar">U</div>
@@ -15,12 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
+// No specific imports
 </script>
 
 <style scoped>
 .profile-card {
-    background: white;
+    background: var(--admin-card-bg);
     padding: 2rem;
     border-radius: 8px;
     display: flex;

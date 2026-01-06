@@ -27,21 +27,24 @@ const router = createRouter({
       path: '/admin',
       component: AdminLayout,
       children: [
-         {
-           path: '',
-           name: 'admin-dashboard',
-           component: () => import('@/views/private/admin/DashboardView.vue')
-         },
-         {
-           path: 'users',
-           name: 'admin-users',
-           component: () => import('@/views/private/admin/UsersView.vue')
-         },
-         {
-           path: 'reports',
-           name: 'admin-reports',
-           component: () => import('@/views/private/admin/ReportsView.vue')
-         }
+        {
+          path: '',
+          name: 'admin-dashboard',
+          component: () => import('@/views/private/admin/DashboardView.vue'),
+          meta: { title: 'Dashboard' }
+        },
+        {
+          path: 'users',
+          name: 'admin-users',
+          component: () => import('@/views/private/admin/UsersView.vue'),
+          meta: { title: 'User Management' }
+        },
+        {
+          path: 'reports',
+          name: 'admin-reports',
+          component: () => import('@/views/private/admin/ReportsView.vue'),
+          meta: { title: 'Reports & Analytics' }
+        }
       ]
     },
     // --- Master Routes ---
@@ -51,17 +54,19 @@ const router = createRouter({
       children: [
         {
           path: '',
-          redirect: { name: 'master-settings' } 
+          redirect: { name: 'master-settings' }
         },
         {
           path: 'settings',
           name: 'master-settings',
-          component: () => import('@/views/private/master/SettingsView.vue')
+          component: () => import('@/views/private/master/SettingsView.vue'),
+          meta: { title: 'System Settings' }
         },
         {
           path: 'audit',
           name: 'master-audit',
-          component: () => import('@/views/private/master/AuditLogView.vue')
+          component: () => import('@/views/private/master/AuditLogView.vue'),
+          meta: { title: 'Audit Logs' }
         }
       ]
     },
@@ -77,12 +82,14 @@ const router = createRouter({
         {
           path: 'profile',
           name: 'user-profile',
-          component: () => import('@/views/private/user/ProfileView.vue')
+          component: () => import('@/views/private/user/ProfileView.vue'),
+          meta: { title: 'My Profile' }
         },
         {
           path: 'tasks',
           name: 'user-tasks',
-          component: () => import('@/views/private/user/MyTasksView.vue')
+          component: () => import('@/views/private/user/MyTasksView.vue'),
+          meta: { title: 'My Tasks' }
         }
       ]
     }

@@ -2,7 +2,7 @@
 
 // Stats Card
 .stats-card {
-    background: white;
+    background: var(--admin-card-bg);
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -13,7 +13,7 @@
     .meta {
         h3 {
             font-size: 0.875rem;
-            color: #64748b;
+            color: var(--admin-text-muted);
             margin: 0 0 0.5rem 0;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -21,7 +21,7 @@
         .value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1e293b;
+            color: var(--admin-text);
         }
     }
     
@@ -40,7 +40,7 @@
 
 // Data Table
 .admin-table-container {
-    background: white;
+    background: var(--admin-card-bg);
     border-radius: 0.5rem;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     overflow: hidden;
@@ -50,13 +50,13 @@
         border-collapse: collapse;
         
         thead {
-            background-color: #f8fafc;
+            background-color: var(--dropdown-header-bg);
             th {
                 text-align: left;
                 padding: 1rem 1.5rem;
                 font-size: 0.75rem;
                 font-weight: 600;
-                color: #64748b;
+                color: var(--admin-text-muted);
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
             }
@@ -64,13 +64,13 @@
         
         tbody {
             tr {
-                border-top: 1px solid #e2e8f0;
+                border-top: 1px solid var(--header-border);
                 &:hover {
-                    background-color: #f8fafc;
+                    background-color: var(--dropdown-hover-bg);
                 }
                 td {
                     padding: 1rem 1.5rem;
-                    color: #334155;
+                    color: var(--admin-text);
                 }
             }
         }

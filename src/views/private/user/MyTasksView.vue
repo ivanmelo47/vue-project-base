@@ -1,6 +1,5 @@
 <template>
   <div class="user-tasks">
-    <AdminHeader title="My Tasks" />
     <div class="content-wrapper">
         <ul class="task-list">
             <li>Review documents</li>
@@ -12,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
+// No specific imports
 </script>
 
 <style scoped>

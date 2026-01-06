@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+// Breakpoints Map
+$breakpoints: (
+    'mobile': 768px,
+    'tablet': 992px,
+    'desktop': 1200px
+);
+
+// Responsive Mixin
+// Usage: @include respond-to('mobile') { ... }
+@mixin respond-to($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $width: map.get($breakpoints, $breakpoint);
+        @media (max-width: $width) {
+            @content;
+        }
+    } @else {
+        @warn "No breakpoint found for `#{$breakpoint}`. Available breakpoints: #{map.keys($breakpoints)}.";
+    }
+}

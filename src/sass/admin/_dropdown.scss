@@ -1,0 +1,190 @@
+// _dropdown.scss
+// User Profile Dropdown Styles
+@use 'mixins' as *;
+
+.user-profile-dropdown {
+    position: relative;
+
+    .profile-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        color: var(--admin-text);
+
+        &:hover, &:focus {
+            background-color: rgba(0,0,0,0.05);
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .username {
+            font-weight: 500;
+            font-size: 0.9rem;
+
+            @include respond-to('mobile') {
+                display: none;
+            }
+        }
+
+        .arrow-icon {
+            font-size: 0.8rem;
+            color: var(--admin-text-muted);
+            transition: transform 0.2s;
+        }
+    }
+
+    &.active {
+        .arrow-icon {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-menu {
+            display: block; // Fallback
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0;
+        width: 220px;
+        background: var(--admin-card-bg);
+        border: 1px solid var(--header-border);
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+        z-index: 1000;
+        overflow: hidden;
+
+        .dropdown-header {
+            padding: 1rem;
+            border-bottom: 1px solid var(--header-border);
+            background-color: var(--dropdown-header-bg);
+            
+            .user-name {
+                margin: 0;
+                font-weight: 600;
+                color: var(--admin-text);
+            }
+            
+            .user-role {
+                margin: 0;
+                font-size: 0.8rem;
+                color: var(--admin-text-muted);
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0.5rem 0 0 0;
+            margin: 0;
+        }
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.6rem 1rem;
+                color: var(--admin-text);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: background 0.2s;
+
+                &:hover {
+                    background-color: var(--dropdown-hover-bg);
+                }
+
+                &.text-danger {
+                    color: #ef4444;
+                    
+                    &:hover {
+                        background-color: var(--danger-hover-bg);
+                    }
+                }
+            }
+        }
+
+        .menu-item-switch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--admin-text);
+
+            &:hover {
+                background-color: var(--dropdown-hover-bg);
+            }
+
+            .switch-label {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Custom Switch Style */
+            .form-switch {
+                display: flex;
+                align-items: center;
+                
+                .form-check-input {
+                    appearance: none;
+                    width: 2.5em;
+                    height: 1.25em;
+                    background-color: #cbd5e1;
+                    border-radius: 2em;
+                    position: relative;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease-in-out;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 1em;
+                        height: 1em;
+                        border-radius: 50%;
+                        background-color: white;
+                        top: 0.125em;
+                        left: 0.125em;
+                        transition: transform 0.2s ease-in-out;
+                        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+                    }
+
+                    &:checked {
+                        background-color: var(--sidebar-active-bg);
+                        
+                        &::after {
+                            transform: translateX(1.25em);
+                        }
+                    }
+                }
+            }
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--header-border);
+            margin: 0.5rem 0;
+        }
+    }
+}

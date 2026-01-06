@@ -1,6 +1,5 @@
 <template>
   <div class="master-settings">
-    <AdminHeader title="System Settings" />
     <div class="content-wrapper">
         <div class="card">
             <h3>Global Configuration</h3>
@@ -11,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
+// No specific imports
 </script>
 
 <style scoped>
