@@ -44,50 +44,30 @@ const router = createRouter({
           name: 'admin-reports',
           component: () => import('@/views/private/admin/ReportsView.vue'),
           meta: { title: 'Reports & Analytics' }
-        }
-      ]
-    },
-    // --- Master Routes ---
-    {
-      path: '/master',
-      component: AdminLayout,
-      children: [
-        {
-          path: '',
-          redirect: { name: 'master-settings' }
         },
+        // Moved from Master
         {
           path: 'settings',
-          name: 'master-settings',
+          name: 'admin-settings',
           component: () => import('@/views/private/master/SettingsView.vue'),
           meta: { title: 'System Settings' }
         },
         {
           path: 'audit',
-          name: 'master-audit',
+          name: 'admin-audit',
           component: () => import('@/views/private/master/AuditLogView.vue'),
           meta: { title: 'Audit Logs' }
-        }
-      ]
-    },
-    // --- User Routes ---
-    {
-      path: '/user',
-      component: AdminLayout,
-      children: [
-        {
-          path: '',
-          redirect: { name: 'user-profile' }
         },
+        // Moved from User
         {
           path: 'profile',
-          name: 'user-profile',
+          name: 'admin-profile',
           component: () => import('@/views/private/user/ProfileView.vue'),
           meta: { title: 'My Profile' }
         },
         {
           path: 'tasks',
-          name: 'user-tasks',
+          name: 'admin-tasks',
           component: () => import('@/views/private/user/MyTasksView.vue'),
           meta: { title: 'My Tasks' }
         }

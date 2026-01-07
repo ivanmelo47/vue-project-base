@@ -13,13 +13,4 @@
 // No specific imports
 </script>
 
-<style scoped>
-.log-entry {
-    background: white;
-    padding: 1rem;
-    border-bottom: 1px solid #f3f4f6;
-    display: flex;
-    gap: 2rem;
-}
-.timestamp { color: #6b7280; font-family: monospace; }
-</style>
+

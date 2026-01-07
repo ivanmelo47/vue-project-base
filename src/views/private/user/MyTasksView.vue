@@ -14,11 +14,4 @@
 // No specific imports
 </script>
 
-<style scoped>
-.task-list {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    list-style-position: inside;
-}
-</style>
+

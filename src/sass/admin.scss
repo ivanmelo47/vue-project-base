@@ -1,8 +1,5 @@
 @use 'sass:color';
 
-
-
-// 1. Core & Variables
 // 1. Core & Variables
 @use 'admin/variables';
 
@@ -11,6 +8,7 @@
 @use 'admin/header';
 @use 'admin/sidebar';
 @use 'admin/dropdown';
+@use 'admin/pages';
 
 // 3. Other Components
 @use 'admin/components';

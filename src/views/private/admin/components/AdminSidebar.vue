@@ -6,7 +6,6 @@
     </div>
     <nav>
       <ul>
-        <li class="section-title" v-if="!collapsed">Admin</li>
         <li>
             <RouterLink to="/admin" title="Dashboard" active-class="ignore-active" exact-active-class="router-link-active">
                 <i class="bi bi-speedometer2"></i>
@@ -25,30 +24,26 @@
                 <span v-if="!collapsed">Reports</span>
             </RouterLink>
         </li>
-
-        <li class="section-title" v-if="!collapsed">Master</li>
         <li>
-            <RouterLink to="/master/settings" title="Settings">
+            <RouterLink to="/admin/settings" title="Settings">
                 <i class="bi bi-gear"></i>
                 <span v-if="!collapsed">Settings</span>
             </RouterLink>
         </li>
         <li>
-            <RouterLink to="/master/audit" title="Audit Logs">
+            <RouterLink to="/admin/audit" title="Audit Logs">
                 <i class="bi bi-journal-text"></i>
                 <span v-if="!collapsed">Audit Logs</span>
             </RouterLink>
         </li>
-
-        <li class="section-title" v-if="!collapsed">User</li>
         <li>
-            <RouterLink to="/user/profile" title="My Profile">
+            <RouterLink to="/admin/profile" title="My Profile">
                 <i class="bi bi-person-circle"></i>
                 <span v-if="!collapsed">My Profile</span>
             </RouterLink>
         </li>
         <li>
-            <RouterLink to="/user/tasks" title="My Tasks">
+            <RouterLink to="/admin/tasks" title="My Tasks">
                 <i class="bi bi-list-check"></i>
                 <span v-if="!collapsed">My Tasks</span>
             </RouterLink>

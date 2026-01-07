@@ -29,20 +29,4 @@ const users = ref([
 ])
 </script>
 
-<style scoped lang="scss">
-.btn-primary {
-    background: #42b883;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.status-badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    &.active { background: #d1fae5; color: #065f46; }
-    &.inactive { background: #f3f4f6; color: #374151; }
-}
-</style>
+

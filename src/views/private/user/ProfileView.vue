@@ -17,32 +17,4 @@
 // No specific imports
 </script>
 
-<style scoped>
-.profile-card {
-    background: var(--admin-card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.avatar {
-    width: 64px;
-    height: 64px;
-    background: #42b883;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.role-badge {
-    background: #dbeafe;
-    color: #1e40af;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-}
-</style>
+

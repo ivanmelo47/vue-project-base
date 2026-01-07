@@ -1,0 +1,133 @@
+// _pages.scss
+// Page-specific Styles
+@use 'mixins' as *;
+@use 'variables' as *;
+
+// Dashboard
+.admin-dashboard {
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .recent-activity {
+    background: var(--admin-card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    
+    h3 {
+      font-size: 1.125rem;
+      color: var(--admin-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: var(--admin-text);
+    }
+  }
+}
+
+// Users View
+.admin-users {
+    .actions {
+        margin-bottom: 1.5rem;
+    }
+    .btn-primary {
+        background: #42b883;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover { background: #3aa876; }
+    }
+    .status-badge {
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        &.active { background: #d1fae5; color: #065f46; }
+        &.inactive { background: #f3f4f6; color: #374151; }
+    }
+}
+
+// Settings View
+.master-settings {
+    .card {
+        background: var(--admin-card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .badge {
+        background: var(--dropdown-hover-bg);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.875rem;
+    }
+}
+
+// Audit Log View
+.master-audit {
+    .log-entry {
+        background: var(--admin-card-bg);
+        padding: 1rem;
+        border-bottom: 1px solid var(--header-border);
+        display: flex;
+        gap: 2rem;
+    }
+    .timestamp { color: var(--admin-text-muted); font-family: monospace; }
+}
+
+// Profile View
+.user-profile {
+    .profile-card {
+        background: var(--admin-card-bg);
+        padding: 2rem;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .avatar {
+        width: 64px;
+        height: 64px;
+        background: #42b883;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .info {
+        h3 { color: var(--admin-text); margin: 0; }
+        p { color: var(--admin-text-muted); margin: 0.25rem 0; }
+    }
+    .role-badge {
+        background: #dbeafe;
+        color: #1e40af;
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+    }
+}
+
+// My Tasks View
+.user-tasks {
+    .task-list {
+        background: var(--admin-card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        list-style-position: inside;
+        color: var(--admin-text);
+        
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--header-border);
+            &:last-child { border-bottom: none; }
+        }
+    }
+}

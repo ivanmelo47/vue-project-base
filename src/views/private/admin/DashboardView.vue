@@ -26,10 +26,4 @@
 import AdminStatsCard from '@/views/private/admin/components/AdminStatsCard.vue'
 </script>
 
-<style scoped lang="scss">
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-}
-</style>
+
