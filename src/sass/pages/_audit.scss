@@ -1,0 +1,11 @@
+// Audit Log View
+.master-audit {
+    .log-entry {
+        background: var(--admin-card-bg);
+        padding: 1rem;
+        border-bottom: 1px solid var(--header-border);
+        display: flex;
+        gap: 2rem;
+    }
+    .timestamp { color: var(--admin-text-muted); font-family: monospace; }
+}

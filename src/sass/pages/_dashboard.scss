@@ -1,0 +1,25 @@
+// Dashboard
+.admin-dashboard {
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .recent-activity {
+    background: var(--admin-card-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    
+    h3 {
+      font-size: 1.125rem;
+      color: var(--admin-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: var(--admin-text);
+    }
+  }
+}

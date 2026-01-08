@@ -1,6 +1,6 @@
 // _layout.scss
 // Admin Layout Structure
-@use 'mixins' as *;
+@use '../abstracts/mixins' as *;
 
 .admin-layout {
   display: flex;

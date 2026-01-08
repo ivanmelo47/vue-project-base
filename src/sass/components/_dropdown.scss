@@ -1,6 +1,6 @@
 // _dropdown.scss
 // User Profile Dropdown Styles
-@use 'mixins' as *;
+@use '../abstracts/mixins' as *;
 
 .user-profile-dropdown {
     position: relative;
@@ -176,6 +176,73 @@
                         &::after {
                             transform: translateX(1.25em);
                         }
+                    }
+                }
+            }
+        }
+
+        .scale-section {
+            padding: 0.6rem 1rem;
+            
+            .scale-label {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 0.9rem;
+                color: var(--admin-text);
+                margin-bottom: 0.5rem;
+                justify-content: space-between;
+            }
+
+            .scale-controls {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                color: var(--admin-text-muted);
+                padding: 0.25rem 0;
+
+                i { font-size: 0.875rem; }
+            }
+
+            .scale-range {
+                flex: 1;
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                height: 4px;
+                background: #e2e8f0;
+                border-radius: 2px;
+                outline: none;
+                cursor: pointer;
+
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background: var(--sidebar-active-bg);
+                    cursor: pointer;
+                    transition: background .15s ease-in-out;
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                &::-moz-range-thumb {
+                    width: 16px;
+                    height: 16px;
+                    border: 0;
+                    border-radius: 50%;
+                    background: var(--sidebar-active-bg);
+                    cursor: pointer;
+                    transition: background .15s ease-in-out;
+                    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+                    &:hover {
+                        transform: scale(1.1);
                     }
                 }
             }

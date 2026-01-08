@@ -1,6 +1,7 @@
+@use 'vendors/index' as vendors;
 @use 'base/index' as base;
-@use 'components/index' as components;
 @use 'layout/index' as layout;
+@use 'components/index' as components;
 @use 'pages/index' as pages;
+@use 'themes/admin';
 @use 'utils/index' as utils;
-

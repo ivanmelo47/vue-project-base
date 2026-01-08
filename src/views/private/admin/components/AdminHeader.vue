@@ -29,17 +29,41 @@
                         <i class="bi bi-gear"></i> Settings
                     </RouterLink>
                 </li>
+                
+                <!-- Theme Toggle -->
                 <li>
-                    <div class="menu-item-switch" @click.stop="toggleTheme">
+                    <div class="menu-item-switch" @click.stop="themeStore.toggleTheme">
                         <div class="switch-label">
-                            <i class="bi" :class="isDarkMode ? 'bi-moon-stars-fill' : 'bi-sun-fill'"></i>
+                            <i class="bi" :class="themeStore.theme === 'dark' ? 'bi-moon-stars-fill' : 'bi-sun-fill'"></i>
                             <span>Dark Mode</span>
                         </div>
                         <div class="form-switch">
-                            <input class="form-check-input" type="checkbox" :checked="isDarkMode" role="switch">
+                            <input class="form-check-input" type="checkbox" :checked="themeStore.theme === 'dark'" role="switch">
                         </div>
                     </div>
                 </li>
+
+                <!-- Scale Selector -->
+                <li class="scale-section">
+                    <div class="scale-label">
+                        <i class="bi bi-display"></i>
+                        <span>System Scale: {{ themeStore.scale }}%</span>
+                    </div>
+                    <div class="scale-controls">
+                        <i class="bi bi-zoom-out"></i>
+                        <input 
+                            type="range" 
+                            min="80" 
+                            max="140" 
+                            step="5" 
+                            :value="themeStore.scale"
+                            @input="themeStore.setScale(parseInt(($event.target as HTMLInputElement).value))"
+                            class="scale-range"
+                        >
+                        <i class="bi bi-zoom-in"></i>
+                    </div>
+                </li>
+
                 <li class="divider"></li>
                 <li>
                     <a href="#" class="text-danger" @click.prevent="isDropdownOpen = false">
@@ -55,6 +79,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { RouterLink } from 'vue-router'
+import { useThemeStore } from '@/stores/theme'
 
 defineProps<{
   title: string
@@ -62,23 +87,8 @@ defineProps<{
 
 defineEmits(['toggle-sidebar'])
 
+const themeStore = useThemeStore()
 const isDropdownOpen = ref(false)
-const isDarkMode = ref(false)
-
-const toggleTheme = () => {
-    isDarkMode.value = !isDarkMode.value
-    updateTheme()
-}
-
-const updateTheme = () => {
-    if (isDarkMode.value) {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        localStorage.setItem('theme', 'dark')
-    } else {
-        document.documentElement.removeAttribute('data-theme')
-        localStorage.setItem('theme', 'light')
-    }
-}
 
 const toggleDropdown = (event: Event) => {
     event.stopPropagation()
@@ -89,16 +99,10 @@ const closeDropdown = () => {
     isDropdownOpen.value = false
 }
 
-// Initialize theme and event listeners
+// Initialize theme on mount (delegating to store)
 onMounted(() => {
     window.addEventListener('click', closeDropdown)
-    
-    // Check local storage or system preference
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        isDarkMode.value = true
-        updateTheme()
-    }
+    themeStore.initTheme()
 })
 
 onUnmounted(() => {

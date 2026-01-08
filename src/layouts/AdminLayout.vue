@@ -26,7 +26,7 @@ import AdminSidebar from '@/views/private/admin/components/AdminSidebar.vue'
 import AdminHeader from '@/views/private/admin/components/AdminHeader.vue'
 
 // Import Admin Styles
-import '@/sass/admin.scss'
+import '@/sass/main.scss'
 
 const route = useRoute()
 const isSidebarCollapsed = ref(false)

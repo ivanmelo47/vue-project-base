@@ -1,0 +1,16 @@
+// My Tasks View
+.user-tasks {
+    .task-list {
+        background: var(--admin-card-bg);
+        padding: 1.5rem;
+        border-radius: 8px;
+        list-style-position: inside;
+        color: var(--admin-text);
+        
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--header-border);
+            &:last-child { border-bottom: none; }
+        }
+    }
+}

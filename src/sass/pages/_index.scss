@@ -1,1 +1,6 @@
-// Placeholder for pages styles
+@forward 'dashboard';
+@forward 'users';
+@forward 'settings';
+@forward 'audit';
+@forward 'profile';
+@forward 'tasks';

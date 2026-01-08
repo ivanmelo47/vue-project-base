@@ -1,6 +1,6 @@
 // _sidebar.scss
 // Admin Sidebar Styles
-@use 'mixins' as *;
+@use '../abstracts/mixins' as *;
 
 .admin-sidebar {
   width: var(--admin-sidebar-width);

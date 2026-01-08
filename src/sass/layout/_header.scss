@@ -1,6 +1,6 @@
 // _header.scss
 // Admin Header Styles
-@use 'mixins' as *;
+@use '../abstracts/mixins' as *;
 
 .admin-header {
   height: var(--admin-header-height);
