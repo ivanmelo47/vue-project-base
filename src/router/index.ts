@@ -45,6 +45,12 @@ const router = createRouter({
           component: () => import('@/views/private/admin/ReportsView.vue'),
           meta: { title: 'Reports & Analytics' }
         },
+        {
+          path: 'charts',
+          name: 'admin-charts',
+          component: () => import('@/views/private/admin/ChartsView.vue'),
+          meta: { title: 'Charts' }
+        },
         // Moved from Master
         {
           path: 'settings',

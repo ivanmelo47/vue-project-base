@@ -25,6 +25,12 @@
             </RouterLink>
         </li>
         <li>
+            <RouterLink to="/admin/charts" title="Charts">
+                <i class="bi bi-graph-up"></i>
+                <span v-if="!collapsed">Charts</span>
+            </RouterLink>
+        </li>
+        <li>
             <RouterLink to="/admin/settings" title="Settings">
                 <i class="bi bi-gear"></i>
                 <span v-if="!collapsed">Settings</span>

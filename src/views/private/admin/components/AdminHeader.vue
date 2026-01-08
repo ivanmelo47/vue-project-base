@@ -50,17 +50,18 @@
                         <span>System Scale: {{ themeStore.scale }}%</span>
                     </div>
                     <div class="scale-controls">
-                        <i class="bi bi-zoom-out"></i>
-                        <input 
-                            type="range" 
-                            min="80" 
-                            max="140" 
-                            step="5" 
-                            :value="themeStore.scale"
-                            @input="themeStore.setScale(parseInt(($event.target as HTMLInputElement).value))"
-                            class="scale-range"
+                        <select 
+                            class="form-select form-select-sm scale-select" 
+                            :value="themeStore.scale" 
+                            @click.stop
+                            @change="themeStore.setScale(parseInt(($event.target as HTMLSelectElement).value))"
                         >
-                        <i class="bi bi-zoom-in"></i>
+                            <option :value="80">80%</option>
+                            <option :value="90">90%</option>
+                            <option :value="100">100%</option>
+                            <option :value="120">120%</option>
+                            <option :value="140">140%</option>
+                        </select>
                     </div>
                 </li>
 
