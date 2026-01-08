@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${DOCKER_PORT:-8080}:80"
+    restart: always
