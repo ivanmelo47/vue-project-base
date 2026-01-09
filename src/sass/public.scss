@@ -1,0 +1,87 @@
+/* Aqui se definen los estilos publicos */
+@use 'abstracts/variables' as *;
+@use 'base/typography';
+@use 'base/reset';
+
+// Page specific styles
+@use 'pages/landingpage';
+@use 'pages/login';
+
+// Basic Utilities workaround if not importing full utils
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+// Footer Styles
+.public-footer {
+    background-color: var(--admin-card-bg);
+    border-top: 1px solid var(--header-border);
+    padding: 3rem 0 1.5rem;
+    margin-top: auto; // Push to bottom if using flex column
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+    }
+
+    .footer-brand {
+        max-width: 300px;
+
+        h4 {
+            font-size: 1.5rem;
+            color: var(--admin-text);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        p {
+            color: var(--admin-text-muted);
+        }
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 3rem;
+
+        .link-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h5 {
+                color: var(--admin-text);
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+            }
+
+            a {
+                color: var(--admin-text-muted);
+                text-decoration: none;
+
+                &:hover {
+                    color: var(--sidebar-active-bg);
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid var(--header-border);
+        padding-top: 1.5rem;
+        text-align: center;
+
+        p {
+            color: var(--admin-text-muted);
+            font-size: 0.875rem;
+        }
+    }
+}

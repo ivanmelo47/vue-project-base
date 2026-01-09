@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
+
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import AdminLayout from '@/layouts/AdminLayout.vue'
 
@@ -12,8 +12,13 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'home',
-          component: HomeView
+          name: 'landing',
+          component: () => import('@/views/LandingPage.vue')
+        },
+        {
+          path: 'login',
+          name: 'login',
+          component: () => import('@/views/LoginPage.vue')
         },
         {
           path: 'about',
