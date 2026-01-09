@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+
+.not-found-page {
+    min-height: 60vh; // Ensure it takes up decent vertical space within the layout
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem;
+
+    .error-content {
+        h1 {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--sidebar-active-bg);
+            margin-bottom: 1rem;
+
+            @media (max-width: 768px) {
+                font-size: 5rem;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--admin-text);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: var(--admin-text-muted);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-home {
+            display: inline-block;
+            background-color: var(--sidebar-active-bg);
+            color: white;
+            padding: 0.875rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(59, 130, 246, 0.3);
+                opacity: 0.9;
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
 // Page specific styles
 @use 'pages/landingpage';
 @use 'pages/login';
+@use 'pages/notfound';
 
 // Basic Utilities workaround if not importing full utils
 .container {
