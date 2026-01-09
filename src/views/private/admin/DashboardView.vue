@@ -2,16 +2,16 @@
   <div class="admin-dashboard">
     <div class="stats-grid">
         <AdminStatsCard title="Total Users" value="1,240">
-            <template #icon>👥</template>
+            <template #icon><i class="bi bi-people-fill"></i></template>
         </AdminStatsCard>
         <AdminStatsCard title="Revenue" value="$45,200">
-             <template #icon>💰</template>
+             <template #icon><i class="bi bi-currency-dollar"></i></template>
         </AdminStatsCard>
         <AdminStatsCard title="Active Sessions" value="245">
-             <template #icon>🔌</template>
+             <template #icon><i class="bi bi-activity"></i></template>
         </AdminStatsCard>
         <AdminStatsCard title="Pending Orders" value="12">
-             <template #icon>📦</template>
+             <template #icon><i class="bi bi-box-seam-fill"></i></template>
         </AdminStatsCard>
     </div>
     

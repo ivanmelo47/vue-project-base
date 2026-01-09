@@ -20,12 +20,12 @@
             </div>
             <ul>
                 <li>
-                    <RouterLink to="/user/profile" @click="isDropdownOpen = false">
+                    <RouterLink to="/admin/profile" @click="isDropdownOpen = false">
                         <i class="bi bi-person"></i> My Profile
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/master/settings" @click="isDropdownOpen = false">
+                    <RouterLink to="/admin/settings" @click="isDropdownOpen = false">
                         <i class="bi bi-gear"></i> Settings
                     </RouterLink>
                 </li>
